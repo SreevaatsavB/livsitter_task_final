@@ -4,8 +4,8 @@ def predict():
     import json
     import pandas as pd 
 
-    X_test = pd.read_csv("X_test.csv")
-    Y_test = pd.read_csv("Y_test.csv")
+    X_test = pd.read_csv("src/X_test.csv")
+    Y_test = pd.read_csv("src/Y_test.csv")
 
     X_test = X_test[:50]
     Y_test = Y_test[:50]
