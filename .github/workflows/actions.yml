@@ -28,7 +28,7 @@ jobs:
         run: |
           commit_time=$(date +'%Y-%m-%d %H:%M:%S')
           python src/get_preds.py > test_logs/predictions.txt
-          accuracy=$(grep 'Accuracy' predictions.txt | awk '{print $2}')
+          accuracy=$(grep 'Accuracy' test_logs/predictions.txt | awk '{print $2}')
           echo "Model Accuracy: $accuracy"
           echo "Commit Time: $commit_time"
         shell: bash
