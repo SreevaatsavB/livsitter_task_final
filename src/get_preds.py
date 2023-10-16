@@ -56,9 +56,8 @@ def predict():
         if y_pred[i] == y_test[i]:
             tot_match += 1
 
-    print()
+    # print()
     print("Accuracy = ", tot_match/len(y_pred))
-
 
 if __name__ == '__main__':
     predict()
