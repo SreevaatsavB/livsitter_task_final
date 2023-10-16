@@ -4,7 +4,7 @@ on:
   push:
     
 jobs:
-  scrape-twitter:
+  unit-test:
     runs-on: ubuntu-latest
 
     container:
