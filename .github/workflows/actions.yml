@@ -1,0 +1,41 @@
+name: run twitter_scapper.py
+
+on:
+  push:
+    
+jobs:
+  scrape-twitter:
+    runs-on: ubuntu-latest
+
+    container:
+      image: python:3.9
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements_unittest.txt
+          
+      - name: Configure git to trust the workspace despite the different owner
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          git config --global user.name "SreevaatsavB"
+          git config --global user.email "bavanasreevaatsav1@gmail.com"
+          
+      - name: Get Predictions and Capture Accuracy
+        run: |
+          commit_time=$(date +'%Y-%m-%d %H:%M:%S')
+          python src\get_preds.py > predictions.txt
+          accuracy=$(grep 'Accuracy' predictions.txt | awk '{print $2}')
+          echo "Model Accuracy: $accuracy"
+          echo "Commit Time: $commit_time"
+        shell: bash
+  
+      - name: commit
+        run: |
+          git add -A
+          git commit -m "Commit - $(date +'%Y-%m-%d')"
+          git push origin main --force
