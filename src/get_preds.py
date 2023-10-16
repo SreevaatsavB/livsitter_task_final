@@ -2,13 +2,18 @@ def predict():
     import numpy as np
     import requests
     import json
-    import pandas as pd 
+    import pandas as pd
+    import random
 
     X_test = pd.read_csv("src/X_test.csv")
     Y_test = pd.read_csv("src/Y_test.csv")
 
-    X_test = X_test[:50]
-    Y_test = Y_test[:50]
+    random_indexes = np.random.choice(X_test.index, size=100, replace=False)
+    X_test = X_test.loc[random_indexes]
+    Y_test = Y_test.loc[random_indexes]
+
+    # X_test = X_test[:50]
+    # Y_test = Y_test[:50]
 
     del X_test["Unnamed: 0"]
     del Y_test["Unnamed: 0"]
