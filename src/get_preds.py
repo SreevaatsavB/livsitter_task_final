@@ -51,9 +51,14 @@ def predict():
         # print(predictions)
         y_pred.append(predictions[0])
 
+    y_test = list(Y_test["Class"])
+    tot_match = 0
+    for i in range(y_pred):
+        if y_pred[i] == y_test[i]:
+            tot_match += 1
 
     print()
-    print("Accuracy = ", accuracy_score(y_pred=y_pred, y_true=list(Y_test["Class"])))
+    print("Accuracy = ", tot_match/len(y_pred))
 
 
 if __name__ == '__main__':
