@@ -52,7 +52,7 @@ def predict():
 
     y_test = list(Y_test["Class"])
     tot_match = 0
-    for i in range(y_pred):
+    for i in range(len(y_pred)):
         if y_pred[i] == y_test[i]:
             tot_match += 1
 
