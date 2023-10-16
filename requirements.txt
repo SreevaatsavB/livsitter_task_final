@@ -58,4 +58,4 @@ tzdata==2023.3
 urllib3==2.0.6
 wcwidth==0.2.8
 Werkzeug==3.0.0
-xgboost==2.0.0
+# xgboost==2.0.0

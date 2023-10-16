@@ -25,7 +25,7 @@ def home_endpoint():
 def predict():
 
     scaler  = load(open('models/standard_scalar.pkl', 'rb'))
-    xgb_model = load(open('models/XGB_clf.pkl', 'rb'))
+    xgb_model = load(open('models/RC_clf.pkl', 'rb'))
 
     # Get the input data from the request
     data = request.get_json()
