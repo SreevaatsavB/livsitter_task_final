@@ -2,7 +2,6 @@ def predict():
     import numpy as np
     import requests
     import json
-    from sklearn.metrics import accuracy_score
     import pandas as pd 
 
     X_test = pd.read_csv("X_test.csv")
