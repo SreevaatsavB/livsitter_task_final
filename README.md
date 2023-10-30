@@ -1,5 +1,5 @@
 # MLOPs Task
-This is a simple MLOPS pipeline for detecting the credit card fraudlant cases. Dataset link :- https://www.kaggle.com/datasets/nelgiriyewithana/credit-card-fraud-detection-dataset-2023
+This is a simple MLOPS pipeline for detecting the credit card fraudlant cases. Dataset link :- https://www.kaggle.com/datasets/nelgiriyewithana/credit-card-fraud-detection-dataset-2023.
 
 Due to storage limitations in github, the training was done on a part of the data.
 
